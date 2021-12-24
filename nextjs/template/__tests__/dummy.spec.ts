@@ -1,5 +1,5 @@
-import "@testing-library/jest-dom";
+import '@testing-library/jest-dom';
 
-test("runs", () => {
+test('runs', () => {
   expect(1 + 1).toBe(2);
 });

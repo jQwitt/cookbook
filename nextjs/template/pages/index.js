@@ -1,5 +1,6 @@
-import Head from "next/head";
-import "tailwindcss/tailwind.css";
+import Head from 'next/head';
+import Image from 'next/image';
+import 'tailwindcss/tailwind.css';
 
 export default function Home() {
   return (
@@ -55,7 +56,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by <img src="/vercel.svg" alt="Vercel" className="logo" />
+          Powered by <Image src="/vercel.svg" alt="Vercel" className="logo" />
         </a>
       </footer>
 
