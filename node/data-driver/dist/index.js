@@ -50,11 +50,13 @@ function start() {
             switch (_a.label) {
                 case 0:
                     app = (0, express_1.default)();
-                    port = 3000;
+                    port = process.env.PORT;
                     return [4 /*yield*/, (0, mongoose_1.default)()];
                 case 1:
                     _a.sent();
-                    (0, api_1.default)(app);
+                    return [4 /*yield*/, (0, api_1.default)(app)];
+                case 2:
+                    _a.sent();
                     sample = new models_1.SampleModel({ name: "sample" });
                     sample.save();
                     app.listen(port, function () {

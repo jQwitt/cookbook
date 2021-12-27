@@ -44,7 +44,7 @@ function configureMongoose() {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, mongoose_1.default.connect("mongodb://localhost:27017/test")];
+                case 0: return [4 /*yield*/, mongoose_1.default.connect("".concat(process.env.MONGO_URL))];
                 case 1:
                     _a.sent();
                     return [2 /*return*/];

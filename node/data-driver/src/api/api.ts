@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
 
-function configureApi(app: express.Application) {
+export default async function configureApi(app: express.Application) {
   app.get("/", (req: Request, res: Response) => {
     res.send("Hello world!");
   });
@@ -9,5 +9,3 @@ function configureApi(app: express.Application) {
     res.send("Hello world!");
   });
 }
-
-export default configureApi;

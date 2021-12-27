@@ -7,10 +7,10 @@ import { SampleModel } from "./models";
 
 async function start() {
   const app = express();
-  const port = 3000;
+  const port = process.env.PORT;
 
   await configureMongoose();
-  configureApi(app);
+  await configureApi(app);
 
   // testing - works!
   const sample = new SampleModel({ name: "sample" });
