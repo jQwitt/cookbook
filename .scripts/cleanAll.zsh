@@ -11,8 +11,8 @@ do
     cd $dir
     for subDir in `ls`
     do
-      echo cleaning $dir/$subDir
       cd $dir/$subDir
+      echo cleaning $(pwd)
 
       rm -f yarn.lock
       rm -f yarn-error.log
