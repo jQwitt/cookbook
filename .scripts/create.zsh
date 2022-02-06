@@ -33,10 +33,17 @@ case $flavor in
 
     # create project
     msg="creating new $flavor:$spice project at $(pwd)"
+    echo "\e[1;32m$msg\e[0m"
     cd ..
     mkdir $name
     cd $name
     cp -a $toCp/. .
+
+    # run supported setup scripts
+    toExec=$cookbookPath/.scripts/setup/$flavor.zsh
+    if [ -f $toExec ]; then
+      $toExec $(pwd)
+    fi
     ;;
   *)
     msg="err: unrecognized flavor: ${flavor:-' '}"
