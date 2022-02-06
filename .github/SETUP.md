@@ -10,6 +10,8 @@ git clone https://github.com/jQwitt/cookbook.git
 
 For JavaScript framework flavors, make sure you have `Node / NVM` and a package manager of your choice, `yarn` works out of the box.
 
+Certain scripts may fail due to permission errors, I recommend running `chmod +x ..scripts/init.zsh && .scripts/init.zsh` as this gives execute permissions to `scripts/*.zsh`.
+
 ### Create a new Recipie
 
 Run the following script to create a new recipie:
