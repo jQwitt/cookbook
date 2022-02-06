@@ -6,8 +6,8 @@ cookbookPath=$(pwd)
 echo 'Welcome to cookbook!'
 vared -p 'what should we call your recipie?  ' -c name
 if [ ! $name ]; then
-  msg='cannot cook without a name'
-  echo "\e[1;31m$msg\e[1;31m"
+  msg='err: cannot cook without a name'
+  echo "\e[1;31m$msg\e[0m"
   exit 1
 fi
 
@@ -19,20 +19,27 @@ case $flavor in
     # see if spice exists, and is valid
     toCp=$cookbookPath/$flavor/${spice:="template"}
     if [ ! -d $toCp ]; then
-      msg="invalid recipie $flavor:$spice"
-      echo "\e[1;31m$msg\e[1;31m"
+      msg="err: invalid recipie $flavor:$spice"
+      echo "\e[1;31m$msg\e[0m"
       exit 1
     fi  
 
+    # check if can create
+    if [ -d ../$name ]; then
+      msg="err: file already exists"
+      echo "\e[1;31m$msg\e[0m"
+      exit 1
+    fi
+
+    # create project
     msg="creating new $flavor:$spice project at $(pwd)"
-    echo "\e[1;32m$msg\e[1;32m"
     cd ..
     mkdir $name
     cd $name
     cp -a $toCp/. .
     ;;
   *)
-    msg="unrecognized flavor: ${flavor:-' '}"
+    msg="err: unrecognized flavor: ${flavor:-' '}"
     echo "\e[1;31m$msg\e[0m"
     ;;
 esac
