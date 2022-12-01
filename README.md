@@ -8,6 +8,8 @@ All in one recipe book containing basic as well as preconfigured, setup and hass
 
 - [NextJS](https://nextjs.org/)
 - [React](https://reactjs.org/)
+  - template - default create-react-app
+  - ts-tailwindcss-vite - modified from [TeXmeijin's starter](https://github.com/TeXmeijin/vite-react-ts-tailwind-firebase-starter)
 - [Node](https://nodejs.org/en/)
 
 **Coming Soon**
